@@ -1,28 +1,44 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+
 
 class Education(BaseModel):
-    school: str
-    major: str
-    degree: str
-    start_date: str
-    end_date: str
+
+    school: str = ""
+
+    major: str = ""
+
+    degree: str = ""
+
+
 
 class Experience(BaseModel):
-    company: str
-    position: str
-    start_date: str
-    end_date: str
-    description: str
-    
+
+    company: str = ""
+
+    role: str = ""
+
+    description: str = ""
+
+
+
 class Project(BaseModel):
-    name: str
-    description: str
-    technologies: list[str]
-    start_date: str
-    end_date: str
-    
+
+    name: str = ""
+
+    description: str = ""
+
+    technologies: list[str] = []
+
+
+
 class Resume(BaseModel):
-    name: str
-    education: list[Education]
-    experience: list[Experience]
-    projects: list[Project]
+
+    name: str = ""
+
+    education: list[Education] = []
+
+    experiences: list[Experience] = []
+
+    projects: list[Project] = []
+
+    skills: list[str] = []

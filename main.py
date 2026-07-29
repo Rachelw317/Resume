@@ -1,10 +1,17 @@
-from core.model import get_deepseek
-from schemas.resumeTemplate import Resume
+from loaders.file_loader import load_resume
 
-model = get_deepseek()
+from core.resume_parser import parse_resume
 
-response = model.invoke(
-    "你是一个资深HR，擅长简历优化."
+
+
+text = load_resume(
+    "tests/测试用简历.docx"
 )
 
-print(response.content)
+
+resume = parse_resume(text)
+
+
+print(resume)
+
+print(resume.skills)

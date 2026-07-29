@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
 def get_deepseek():
     api_key = os.getenv("DEEPSEEK_API_KEY")
     if not api_key:
