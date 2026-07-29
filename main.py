@@ -4,6 +4,4 @@ from Message import messages
 
 load_dotenv()
 
-model = get_DeepSeek()
-response = model.invoke(messages)
-print(response)
+
