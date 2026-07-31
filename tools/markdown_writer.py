@@ -80,13 +80,6 @@ def write_markdown(
     )
 
 
-    for note in resume.modification_notes:
-
-        content.append(
-            f"- {note}"
-        )
-
-
     markdown = "\n".join(content)
 
 

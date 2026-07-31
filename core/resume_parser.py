@@ -4,7 +4,6 @@ from core.prompt import RESUME_EXTRACTION_PROMPT
 from schemas.resumeTemplate import Resume
 
 
-
 def parse_resume(text:str)->Resume:
 
     llm = get_deepseek()

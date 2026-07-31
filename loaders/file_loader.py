@@ -22,3 +22,4 @@ def load_resume(file_path:str)->str:
         raise ValueError(
             "Unsupported file format"
         )
+
