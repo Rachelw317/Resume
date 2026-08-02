@@ -6,6 +6,7 @@ from pydantic import BaseModel
 from .resumeTemplate import Resume
 from .jd import JD
 from .match import MatchResult
+from .optimized_resume import OptimizedResume
 
 
 class ResumeState(BaseModel):
@@ -26,8 +27,8 @@ class ResumeState(BaseModel):
     match_result: MatchResult | None = None
 
     # generated result
-    optimized_resume: Resume | None = None
-
+    optimized_resume: OptimizedResume | None = None
+    
     # output
     export_file_path: str | None = None
 

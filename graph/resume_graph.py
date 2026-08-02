@@ -9,6 +9,10 @@ from nodes.parse_jd_node import parse_jd_node
 
 from nodes.match_analysis_node import match_analysis_node
 
+from nodes.opimize_node import optimize_resume_node
+
+from nodes.write_node import write_node
+
 def build_resume_graph() -> StateGraph:
    
    # 告诉LangGraph我们使用的状态类型是ResumeState
@@ -23,6 +27,10 @@ def build_resume_graph() -> StateGraph:
    graph.add_node("parse_jd", parse_jd_node)
    
    graph.add_node("match_analysis", match_analysis_node)
+   
+   graph.add_node("optimize_resume", optimize_resume_node)
+   
+   graph.add_node("write", write_node)
    
    graph.add_edge(
         START,
@@ -57,7 +65,17 @@ def build_resume_graph() -> StateGraph:
      )
    
    graph.add_edge(
-        "match_analysis",
+            "match_analysis",
+            "optimize_resume"
+     )
+   
+   graph.add_edge(
+            "optimize_resume",
+            "write"
+     )    
+   
+   graph.add_edge(
+        "write",
         END
      )
 
