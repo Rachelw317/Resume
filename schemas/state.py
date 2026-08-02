@@ -3,9 +3,9 @@
 
 from pydantic import BaseModel
 
-from resumeTemplate import Resume
-from jd import JD
-from match import MatchResult
+from .resumeTemplate import Resume
+from .jd import JD
+from .match import MatchResult
 
 
 class ResumeState(BaseModel):
