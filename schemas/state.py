@@ -3,6 +3,33 @@
 
 from pydantic import BaseModel
 
+from resumeTemplate import Resume
+from jd import JD
+from match import MatchResult
 
-class State(BaseModel):
-    pass
+
+class ResumeState(BaseModel):
+
+    # input files
+    resume_file_path: str | None = None
+    jd_file_path: str | None = None
+
+    # extracted text
+    resume_text: str | None = None
+    jd_text: str | None = None
+
+    # parsed data
+    resume: Resume | None = None
+    jd: JD | None = None
+
+    # analysis result
+    match_result: MatchResult | None = None
+
+    # generated result
+    optimized_resume: Resume | None = None
+
+    # output
+    export_file_path: str | None = None
+
+    # error
+    error: str | None = None
